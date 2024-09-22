@@ -7,13 +7,10 @@ if($_SESSION['id'] == 13){
     $d = $_GET['id'];
     include_once 'db_connect.php';
         if(isset($_POST['price'])) {
-            
-        //из данных собираем соответствующие переменные
+        
             $price = $_POST['price'];
             $db->query("UPDATE `goods` SET `price`='$price' WHERE `id`=".$d."");
-            // $path = 'index.php';
             header('Location:index.php');
-            //die();
             }
 
         
@@ -22,7 +19,7 @@ if($_SESSION['id'] == 13){
 <html>
     <head>
         <style>
-            /* Basic Styling */
+            
             html, body {
             height: 100%;
             width: 100%;
@@ -36,8 +33,7 @@ if($_SESSION['id'] == 13){
             padding: 15px;
             display: flex;
             }
-
-            /* Columns */
+            
             .left-column {
             width: 65%;
             position: relative;
@@ -48,7 +44,6 @@ if($_SESSION['id'] == 13){
             margin-top: 60px;
             }
 
-            /* Left Column */
             .left-column img {
             width: 80%;
             margin-top: 50px;
@@ -86,97 +81,6 @@ if($_SESSION['id'] == 13){
             font-weight: 300;
             color: #86939E;
             line-height: 24px;
-            }
-
-            /* Product Color */
-            .product-color {
-            margin-bottom: 30px;
-            }
-            
-            .color-choose div {
-            display: inline-block;
-            }
-            
-            .color-choose input[type="radio"] {
-            display: none;
-            }
-            
-            .color-choose input[type="radio"] + label span {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            margin: -1px 4px 0 0;
-            vertical-align: middle;
-            cursor: pointer;
-            border-radius: 50%;
-            border: 2px solid #FFFFFF;
-            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
-            }
-            
-            .color-choose input[type="radio"]#red + label span {
-            background-color: #C91524;
-            }
-            .color-choose input[type="radio"]#blue + label span {
-            background-color: #314780;
-            }
-            .color-choose input[type="radio"]#black + label span {
-            background-color: #323232;
-            }
-            
-            .color-choose input[type="radio"]:checked + label span {
-            background-image: url(images/check-icn.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            }
-
-            /* Cable Configuration */
-            .cable-choose {
-            margin-bottom: 20px;
-            }
-            
-            .cable-choose button {
-            border: 2px solid #E1E8EE;
-            border-radius: 6px;
-            padding: 13px 20px;
-            font-size: 14px;
-            color: #5E6977;
-            background-color: #fff;
-            cursor: pointer;
-            transition: all .5s;
-            }
-            
-            .cable-choose button:hover,
-            .cable-choose button:active,
-            .cable-choose button:focus {
-            border: 2px solid #86939E;
-            outline: none;
-            }
-            
-            .cable-config {
-            border-bottom: 1px solid #E1E8EE;
-            margin-bottom: 20px;
-            }
-            
-            .cable-config a {
-            color: #358ED7;
-            text-decoration: none;
-            font-size: 12px;
-            position: relative;
-            margin: 10px 0;
-            display: inline-block;
-            }
-            
-            .cable-config a:before {
-            content: "?";
-            height: 15px;
-            width: 15px;
-            border-radius: 50%;
-            border: 2px solid rgba(53, 142, 215, 0.5);
-            display: inline-block;
-            text-align: center;
-            line-height: 16px;
-            opacity: 0.5;
-            margin-right: 5px;
             }
 
             /* Product Price */
@@ -242,7 +146,6 @@ if($_SESSION['id'] == 13){
         ?>
         <main class="container">
     
-        <!-- Left Column / Headphones Image -->
         <div class="left-column">
             <?php
             $brand = $_GET['id'];
@@ -258,10 +161,8 @@ if($_SESSION['id'] == 13){
         </div>
 
 
-        <!-- Right Column -->
         <div class="right-column">
 
-        <!-- Product Description -->
         <div class="product-description">
             <?php echo"<span></span>
             <h1>".$row['name']."</h1>
@@ -270,10 +171,8 @@ if($_SESSION['id'] == 13){
         </div>
 
 
-        <!-- Product Configuration -->
         <div class="product-configuration">
 
-            <!-- Product Color -->
             <div class="product-color">
             <span>Color</span>
 
@@ -294,7 +193,6 @@ if($_SESSION['id'] == 13){
 
             </div>
 
-        <!-- Cable Configuration -->
         <div class="cable-config">
         <span>Cable configuration</span>
 
@@ -308,10 +206,7 @@ if($_SESSION['id'] == 13){
         </div>
     </div>
 
-    <?php
-        // include "db_connect.php";
-
-        
+    <?php        
         $p = $db->query("SELECT * FROM `goods` WHERE `id`=".$d."");
         $array = mysqli_fetch_array($p, MYSQLI_ASSOC);
         ?>
