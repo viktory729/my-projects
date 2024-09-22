@@ -1,0 +1,34 @@
+.cont{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    .about-us{
+    height: 50%;
+    width: 100%;
+    padding: 90px 0;
+    }
+    .pic{
+    height: 50%;
+    width: 50%;
+    }
+    .about{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
+    .text{
+    width: 40%;
+    }
+    .text h2{
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    }
+    .text p{
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    }
