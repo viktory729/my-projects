@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="mennu.css">
+        <link rel="stylesheet" href="menu.css">
         <link rel="stylesheet" href="product_card.css">
     </head>
 
