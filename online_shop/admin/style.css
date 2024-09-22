@@ -1,0 +1,86 @@
+h6, h4 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    background-color: lightgrey;
+}
+
+.headerOfSite {
+    height: 100px;
+    background-color: darkslategrey;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+.cellWithPhone {
+    display: flex;
+    min-height: 300px;
+    padding: 5px;
+    padding-top: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cellWithPhone img {
+    padding: 5px;
+}
+
+.footerOfSite {
+    height: 100px;
+    background-color: darkslategrey;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttonsPanel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.paginations {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.phoneList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: lightgrey;
+}
+
+.phoneFilter {
+    width: 90%;
+}
+
+.btn-info {
+    background-color: darkslategray;
+    border-color: darkslategray;
+}
+
+.list-group-item-info {
+    background-color: darkslategray;
+}
+
+.pt-15 {
+    padding-top: 15px;
+}

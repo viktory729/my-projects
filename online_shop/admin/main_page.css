@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+position: sticky;
+height: 46px;
+background-color:#ffa017;
+z-index: 30;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    position: relative;
+    height: auto;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #f1ce9d;
+}
+
+.dropdown-one {
+cursor: pointer;
+display: none;
+position: absolute;
+background-color: #f4cf9c;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(255, 239, 198, 0.512);
+}
+
+.dropdown-two {
+cursor: pointer;
+display: none;
+position: absolute;
+left: 160px;
+top: 0px;
+/* margin: 10px; */
+/* min-width: 160px; */
+width: 200px;
+background-color: #f4cf9c;
+/* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+}
+
+.dropdown-two .dItem{
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-one, #link1:hover > .dropdown-two {
+display: block;
+}
+
+.dropdown-one .dItem {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-one .dItem:hover, .dropdown-two a:hover {
+    background-color: #ddd;
+}
+
