@@ -1,42 +1,3 @@
-<?php
-// session_start();
-// include_once 'db_connect.php';
-// $message = '';
-// if(isset($_POST['id']) && $_POST['id'] != ''){
-//     $id = $_POST['id'];
-//     $product = $db->query('SELECT * FROM `goods` WHERE `id` = '.$id);
-//     $row = $product -> fetch_assoc();
-//     $id = $row['id'];
-//     $name = $row['name'];
-//     $price = $row['price'];
-//     $photo = $row['photo'];
-
-//     $cartArray = array(
-//         $id=>array(
-//             'id' => $id,
-//             'name' => $name,
-//             'price' => $price,
-//             'photo' => $photo,
-//             'quantity' => 1
-//         )
-//     );
-
-//     if(empty($_SESSION['shopping_cart'])){
-//         $_SESSION['shopping_cart'] = $cartArray;
-//         $message = 'Товар добавлен в корзину';
-//     }else{
-//         $array_keys = array_keys($_SESSION['shopping_cart']);
-//         if(in_array($id, $array_keys)){
-//             $message = 'Товар уже добавлен в корзину';
-//         }else{
-//             $_SESSION['shopping_cart'] = array_merge($_SESSION['shopping_cart'], $cartArray);
-//             $message = 'Товар добавлен в корзину';
-//         }
-//     }
-// }
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -92,14 +53,10 @@
                                             $cat = $_GET["id"]; 
                                             $goods = $db->query('SELECT * FROM `goods` WHERE `id_cat` = '.$cat);
                                         } else{
-                                            // echo 'Страница';
                                             $cat = $_GET["id"]; 
-                                            // echo $cat;
                                             $brand = $_GET['id_brand'];
                                             $brand_cat = $_GET["id_cat"];
-                                            // echo $brand;
-                                            //$brand = $db->query('SELECT `brand` FROM `Brand` WHERE `id` IN (SELECT `id_brand` FROM `Brand_Cat` WHERE `id_cat` =' .$row['id'].')');
-                                            //$sqlCat = $db->query('SELECT * FROM `goods` WHERE `id_cat` = '.$cat);
+                                            
                                             $goods = $db->query('SELECT * FROM `goods` WHERE `id_brand` = '.$brand.' AND `id_cat` = '.$brand_cat);
                                         }
 
@@ -107,7 +64,7 @@
                                         while($row = $goods -> fetch_assoc()){
                                             $brand1 = $db->query('SELECT `brand` FROM `Brand` WHERE `id` IN (SELECT `id_brand` FROM `Brand_Cat` WHERE `id_brand` =' .$row['id_brand'].')');
                                             $cat1 = $db->query('SELECT `category` FROM `Category` WHERE `id` IN (SELECT `id_cat` FROM `Brand_Cat` WHERE `id_cat` =' .$row['id_cat'].')');
-                                            //href = "category.php?id_brand='. $ct['id'] .'&id_cat='.$row['id'].'">'.$ct['brand'].'</a></div>';
+                                           
                                         echo '<div class="card card-body mt-3">
                                         <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
                                         <div class="mr-2 mb-3 mb-lg-0">
